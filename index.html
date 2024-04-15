@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Online application Portal</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>Online Registration Form</header>
+      <form action="#" id="registrationForm" onsubmit="generatePDF(); return false;">
+        <div class="form first"  id="section1" >
+          <div class="details personal">
+            <span class="title"> Step 1/3 Personal Details</span>
+
+            <div class="fields">
+              <!--photo-->
+              <div class="passport-photo-container">
+                <div class="passport-photo">
+                  <div class="input-field passport">
+                    <label class="passport-photo-label"
+                      >Please attach a Passport Size Photo(image format should
+                      be in *.jpg,*. jpeg,*.png)Max size=2MB Must have a clear
+                      background.
+                    </label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      name="photo"
+                      onchange="onChangePhoto()"
+                      id="photo"
+                      accept="image/*"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      class="control-label"
+                      id="photoerror1"
+                      style="display: none; color: red"
+                      ><h5>
+                        Image is not Valid. Kindly upload a .png, .jpeg, or .jpg
+                        image
+                      </h5></label
+                    >
+                    <img
+                      src=""
+                      class="passport"
+                      style="display: none"
+                      id="show_photo"
+                    /><br />
+                  </div>
+                </div>
+
+                <!-- end of passport size photo -->
+              </div>
+
+              <!-- Full Name -->
+              <div class="input-field">
+                <!-- This can be changed to make the user input surname, middle name and Firstname separately -->
+                <label for="">Full Name</label>
+                <input type="text" placeholder="Enter your name" required />
+              </div>
+
+              <!-- Date of Birth -->
+              <div class="input-field">
+                <label for="">Date of Birth</label>
+                <input
+                  type="date"
+                  placeholder="Enter your Date of Birth"
+                  required
+                />
+              </div>
+
+              <!--gender-->
+              <div class="input-field">
+                <label>Gender</label>
+                <select name="gender" class="form-control" id="gender">
+                  <option value="">--Select--</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                  <option value="3">Intersex</option>
+                </select>
+              </div>
+              <!-- Email -->
+              <div class="input-field">
+                <label for="emailInput">Email</label>
+                <input type="email" id="emailInput" name="email" placeholder="Enter your Email" required />
+              </div>
+
+              <!--Nationality-->
+              <div class="input-field">
+                <label class="control-label">Nationality</label>
+                <select
+                  name="nationality"
+                  class="form-control selectpickerxx"
+                  id="nationality"
+                  onchange="onNationalityChange()"
+                  data-live-search="true"
+                  data-style="btn-default"
+                  data-container="body"
+                >
+                  <option value="">--Select--</option>
+                  <option value="AFGHAN">Afghan</option>
+                  <option value="ALBANIAN">Albanian</option>
+                  <option value="ALGERIAN">Algerian</option>
+                  <option value="AMERICAN">American</option>
+                  <option value="ANDORRAN">Andorran</option>
+                  <option value="ANGOLAN">Angolan</option>
+                  <option value="ANTIGUANS">Antiguans</option>
+                  <option value="ARGENTINEA">Argentinean</option>
+                  <option value="ARMENIAN">Armenian</option>
+                  <option value="AUSTRALIAN">Australian</option>
+                  <option value="AUSTRIAN">Austrian</option>
+                  <option value="AZERBAIJAN">Azerbaijani</option>
+                  <option value="BAHAMIAN">Bahamian</option>
+                  <option value="BAHRAINI">Bahraini</option>
+                  <option value="BANGLADESH">Bangladeshi</option>
+                  <option value="BARBADIAN">Barbadian</option>
+                  <option value="BARBUDANS">Barbudans</option>
+                  <option value="BATSWANA">Batswana</option>
+                  <option value="BELARUSIAN">Belarusian</option>
+                  <option value="BELGIAN">Belgian</option>
+                  <option value="BELIZEAN">Belizean</option>
+                  <option value="BENINESE">Beninese</option>
+                  <option value="BHUTANESE">Bhutanese</option>
+                  <option value="BOLIVIAN">Bolivian</option>
+                  <option value="BOSNIAN">Bosnian</option>
+                  <option value="BRAZILIAN">Brazilian</option>
+                  <option value="BRITISH">British</option>
+                  <option value="BRUNEIAN">Bruneian</option>
+                  <option value="BU">Burundi</option>
+                  <option value="BULGARIAN">Bulgarian</option>
+                  <option value="BURKINABE">Burkinabe</option>
+                  <option value="BURMESE">Burmese</option>
+                  <option value="BURUNDIAN">Burundian</option>
+                  <option value="CAMBODIAN">Cambodian</option>
+                  <option value="CAMEROONIA">Cameroonian</option>
+                  <option value="CANADIAN">Canadian</option>
+                  <option value="CAPE VERDE">Cape Verdean</option>
+                  <option value="CENTRAL AF">Central African</option>
+                  <option value="CHADIAN">Chadian</option>
+                  <option value="CHILEAN">Chilean</option>
+                  <option value="CHINESE">Chinese</option>
+                  <option value="COLOMBIAN">Colombian</option>
+                  <option value="COMORAN">Comoran</option>
+                  <option value="CONGOLESE">Congolese</option>
+                  <option value="COSTA RICA">Costa Rican</option>
+                  <option value="CROATIAN">Croatian</option>
+                  <option value="CUBAN">Cuban</option>
+                  <option value="CYPRIOT">Cypriot</option>
+                  <option value="CZECH">Czech</option>
+                  <option value="DANISH">Danish</option>
+                  <option value="DJIBOUTI">Djibouti</option>
+                  <option value="DOMINICAN">Dominican</option>
+                  <option value="DUTCH">Dutch</option>
+                  <option value="EAST TIMOR">East Timorese</option>
+                  <option value="ECUADOREAN">Ecuadorean</option>
+                  <option value="EGYPTIAN">Egyptian</option>
+                  <option value="EMIRIAN">Emirian</option>
+                  <option value="EQUATORIAL">Equatorial Guinean</option>
+                  <option value="ERITREA">Eritrea</option>
+                  <option value="ERITREAN">Eritrean</option>
+                  <option value="ESTONIAN">Estonian</option>
+                  <option value="ETHIOPIA">Ethiopian</option>
+                  <option value="ETHIOPIAN">Ethiopian</option>
+                  <option value="FIJIAN">Fijian</option>
+                  <option value="FILIPINO">Filipino</option>
+                  <option value="FINNISH">Finnish</option>
+                  <option value="FRENCH">French</option>
+                  <option value="GABONESE">Gabonese</option>
+                  <option value="GAMBIAN">Gambian</option>
+                  <option value="GEORGIAN">Georgian</option>
+                  <option value="GERMAN">German</option>
+                  <option value="GHANAIAN">Ghanaian</option>
+                  <option value="GREEK">Greek</option>
+                  <option value="GRENADIAN">Grenadian</option>
+                  <option value="GUATEMALAN">Guatemalan</option>
+                  <option value="GUINEA-BIS">Guinea-Bissauan</option>
+                  <option value="GUINEAN">Guinean</option>
+                  <option value="GUYANESE">Guyanese</option>
+                  <option value="HAITIAN">Haitian</option>
+                  <option value="HERZEGOVIN">Herzegovinian</option>
+                  <option value="HONDURAN">Honduran</option>
+                  <option value="HUNGARIAN">Hungarian</option>
+                  <option value="ICELANDER">Icelander</option>
+                  <option value="I-KIRIBATI">I-Kiribati</option>
+                  <option value="INDIAN">Indian</option>
+                  <option value="INDONESIAN">Indonesian</option>
+                  <option value="IRANIAN">Iranian</option>
+                  <option value="IRAQI">Iraqi</option>
+                  <option value="IRISH">Irish</option>
+                  <option value="ISRAELI">Israeli</option>
+                  <option value="ITALIAN">Italian</option>
+                  <option value="IVORIAN">Ivorian</option>
+                  <option value="JAMAICAN">Jamaican</option>
+                  <option value="JAPANESE">Japanese</option>
+                  <option value="JORDANIAN">Jordanian</option>
+                  <option value="KAZAKHSTAN">Kazakhstani</option>
+                  <option value="KEN" selected>Kenyan</option>
+                  <option value="KITTIAN AN">Kittian and Nevisian</option>
+                  <option value="KUWAITI">Kuwaiti</option>
+                  <option value="KYRGYZ">Kyrgyz</option>
+                  <option value="LAOTIAN">Laotian</option>
+                  <option value="LATVIAN">Latvian</option>
+                  <option value="LEBANESE">Lebanese</option>
+                  <option value="LIBERIAN">Liberian</option>
+                  <option value="LIBYAN">Libyan</option>
+                  <option value="LIECHTENST">Liechtensteiner</option>
+                  <option value="LITHUANIAN">Lithuanian</option>
+                  <option value="LUXEMBOURG">Luxembourger</option>
+                  <option value="MACEDONIAN">Macedonian</option>
+                  <option value="MALAGASY">Malagasy</option>
+                  <option value="MALAWIAN">Malawian</option>
+                  <option value="MALAYSIAN">Malaysian</option>
+                  <option value="MALDIVIAN">Maldivian</option>
+                  <option value="MALIAN">Malian</option>
+                  <option value="MALTESE">Maltese</option>
+                  <option value="MARSHALLES">Marshallese</option>
+                  <option value="MAURITANIA">Mauritanian</option>
+                  <option value="MAURITIAN">Mauritian</option>
+                  <option value="MEXICAN">Mexican</option>
+                  <option value="MICRONESIA">Micronesian</option>
+                  <option value="MOLDOVAN">Moldovan</option>
+                  <option value="MONACAN">Monacan</option>
+                  <option value="MONGOLIAN">Mongolian</option>
+                  <option value="MOROCCAN">Moroccan</option>
+                  <option value="MOSOTHO">Mosotho</option>
+                  <option value="MOTSWANA">Motswana</option>
+                  <option value="MOZAMBICAN">Mozambican</option>
+                  <option value="NAMIBIAN">Namibian</option>
+                  <option value="NAURUAN">Nauruan</option>
+                  <option value="NEPALESE">Nepalese</option>
+                  <option value="NEW ZEALAN">New Zealander</option>
+                  <option value="NICARAGUAN">Nicaraguan</option>
+                  <option value="NIGERIAN">Nigerian</option>
+                  <option value="NIGERIEN">Nigerien</option>
+                  <option value="NI-VANUATU">Ni-Vanuatu</option>
+                  <option value="NORTH KORE">North Korean</option>
+                  <option value="NORTHERN I">Northern Irish</option>
+                  <option value="NORWEGIAN">Norwegian</option>
+                  <option value="OMANI">Omani</option>
+                  <option value="PAKISTANI">Pakistani</option>
+                  <option value="PALAUAN">Palauan</option>
+                  <option value="PANAMANIAN">Panamanian</option>
+                  <option value="PAPUA NEW">Papua New Guinean</option>
+                  <option value="PARAGUAYAN">Paraguayan</option>
+                  <option value="PERUVIAN">Peruvian</option>
+                  <option value="POLISH">Polish</option>
+                  <option value="PORTUGUESE">Portuguese</option>
+                  <option value="QATARI">Qatari</option>
+                  <option value="ROMANIAN">Romanian</option>
+                  <option value="RUSSIAN">Russian</option>
+                  <option value="RWANDA">Rwandese</option>
+                  <option value="RWANDAN">Rwandan</option>
+                  <option value="SA">South African</option>
+                  <option value="SAINT LUCI">Saint Lucian</option>
+                  <option value="SALVADORAN">Salvadoran</option>
+                  <option value="SAMOAN">Samoan</option>
+                  <option value="SAN MARINE">San Marinese</option>
+                  <option value="SAO TOMEAN">Sao Tomean</option>
+                  <option value="SAUDI">Saudi</option>
+                  <option value="SCOTTISH">Scottish</option>
+                  <option value="SENEGALESE">Senegalese</option>
+                  <option value="SERBIAN">Serbian</option>
+                  <option value="SEYCHELLOI">Seychellois</option>
+                  <option value="SIERRA LEO">Sierra Leonean</option>
+                  <option value="SINGAPOREA">Singaporean</option>
+                  <option value="SLOVAKIAN">Slovakian</option>
+                  <option value="SLOVENIAN">Slovenian</option>
+                  <option value="SOLOMON IS">Solomon Islander</option>
+                  <option value="SOMALI">Somali</option>
+                  <option value="SOMALIA">Somalia</option>
+                  <option value="SOUTH AFRI">South African</option>
+                  <option value="SOUTH KORE">South Korean</option>
+                  <option value="SOUTHSUD">South Sudanese</option>
+                  <option value="SPANISH">Spanish</option>
+                  <option value="SRI LANKAN">Sri Lankan</option>
+                  <option value="SUDANESE">Sudanese</option>
+                  <option value="SURINAMER">Surinamer</option>
+                  <option value="SWAZI">Swazi</option>
+                  <option value="SWEDISH">Swedish</option>
+                  <option value="SWISS">Swiss</option>
+                  <option value="SYRIAN">Syrian</option>
+                  <option value="TAIWANESE">Taiwanese</option>
+                  <option value="TAJIK">Tajik</option>
+                  <option value="THAI">Thai</option>
+                  <option value="TOGOLESE">Togolese</option>
+                  <option value="TONGAN">Tongan</option>
+                  <option value="TRINIDADIA">Trinidadian or Tobagonian</option>
+                  <option value="TUNISIAN">Tunisian</option>
+                  <option value="TURKISH">Turkish</option>
+                  <option value="TUVALUAN">Tuvaluan</option>
+                  <option value="TZ">Tanzanian</option>
+                  <option value="UG">Ugandan</option>
+                  <option value="UKRAINIAN">Ukrainian</option>
+                  <option value="URUGUAYAN">Uruguayan</option>
+                  <option value="UZBEKISTAN">Uzbekistani</option>
+                  <option value="VENEZUELAN">Venezuelan</option>
+                  <option value="VIETNAMESE">Vietnamese</option>
+                  <option value="WELSH">Welsh</option>
+                  <option value="YEMENITE">Yemenite</option>
+                  <option value="ZAMBIAN">Zambian</option>
+                  <option value="ZIMBABWEAN">Zimbabwean</option>
+                </select>
+              </div>
+<!-- ID  -->
+<!-- <div class="input-field">
+  <label for="">National ID/BC</label>
+  <input
+    type="number"
+    placeholder="Enter your National ID"
+    required
+  />
+</div> -->
+<div class="input-field">
+  <!-- Dropdown to choose if user has National ID -->
+  <label for="hasNationalID">Do you have a National ID?</label>
+  <select id="hasNationalID" name="hasNationalID" onchange="toggleIDInput();">
+      <option value="">Select an option</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select>
+</div>
+
+  <!-- Input and upload for National ID -->
+  
+    <div id="nationalIDSection" style="display: none;">
+<div class="input-field">
+  <label for="nationalIDNumber">National ID Number:</label>
+  <input type="number" id="nationalIDNumber" placeholder="eg. 23456745" name="nationalIDNumber">
+</div>
+<div class="input-field">
+  <label for="nationalIDFile">Upload Scanned National ID (PDF):</label>
+  <input type="file" id="nationalIDFile" name="nationalIDFile" accept="application/pdf">
+</div> 
+  </div>
+ 
+
+ 
+
+<!-- Input and upload for Birth Certificate -->
+<div  id="birthCertificateSection" style="display: none;">
+  <div class="input-field "> 
+    <label for="birthCertificateNumber">Birth Certificate Number:</label>
+    <input type="number" id="birthCertificateNumber" placeholder="eg. 23456745" name="birthCertificateNumber">
+  </div>
+  <div class="input-field "> <label for="birthCertificateFile">Upload Scanned Birth Certificate (PDF):</label>
+    <input type="file" id="birthCertificateFile" name="birthCertificateFile" accept="application/pdf"> </div>
+ 
+</div>
+            
+              <!-- Marital status -->
+              <div class="input-field">
+                <label for="">Marital status</label>
+                <input
+                  type="text"
+                  placeholder="Enter your Marital status "
+                  required
+                />
+              </div>
+              <!-- Place of Birth -->
+              <div class="input-field">
+                <label for="">Place of Birth</label>
+                <input
+                  type="text"
+                  placeholder="Enter your place of Birth"
+                  required
+                />
+              </div>
+
+              <!--county-->
+
+              <div class="input-field">
+                <label class="control-label">County</label>
+                <select name="county" class="form-control">
+                  <option value="">--Select--</option>
+                  <option value="BARINGO">Baringo</option>
+                  <option value="BOMET">Bomet</option>
+                  <option value="BUNGOMA">Bungoma</option>
+                  <option value="BUSIA">Busia</option>
+                  <option value="ELGEYO-MAR">Elgeyo-Marakwet</option>
+                  <option value="EMBU">Embu</option>
+                  <option value="GARISSA">Garissa</option>
+                  <option value="HOMA-BAY">Homa-Bay</option>
+                  <option value="INTERNAT">International Students</option>
+                  <option value="ISIOLO">ISIOLO</option>
+                  <option value="KAJIADO">Kajiado</option>
+                  <option value="KAKAMEGA">Kakamega</option>
+                  <option value="KERICHO">Kericho</option>
+                  <option value="KIAMBU">Kiambu</option>
+                  <option value="KILIFI">Kilifi</option>
+                  <option value="KIRINYAGA">Kirinyaga</option>
+                  <option value="KISII">Kisii</option>
+                  <option value="KISUMU">Kisumu</option>
+                  <option value="KITUI">Kitui</option>
+                  <option value="KWALE">Kwale</option>
+                  <option value="LAIKIPIA">Laikipia</option>
+                  <option value="LAMU">Lamu</option>
+                  <option value="LUGARI">Lugari</option>
+                  <option value="MACHAKOS">Machakos</option>
+                  <option value="MAKUENI">Makueni</option>
+                  <option value="MANDERA">Mandera</option>
+                  <option value="MARSABIT">Marsabit</option>
+                  <option value="MERU">Meru</option>
+                  <option value="MIGORI">Migori</option>
+                  <option value="MOMBASA">Mombasa</option>
+                  <option value="MURANGA">Muranga</option>
+                  <option value="NAIROBI">Nairobi</option>
+                  <option value="NAKURU">Nakuru</option>
+                  <option value="NANDI">Nandi</option>
+                  <option value="NAROK">Narok</option>
+                  <option value="NYAMIRA">Nyamira</option>
+                  <option value="NYANDARUA">Nyandarua</option>
+                  <option value="NYERI">Nyeri</option>
+                  <option value="SAMBURU">Samburu</option>
+                  <option value="SIAYA">Siaya</option>
+                  <option value="TAITA-TAVETA">Taita-taveta</option>
+                  <option value="TANA-RIVER">TANA-RIVER</option>
+                  <option value="THARAKA-NITHI">Tharaka-Nithi</option>
+                  <option value="TRANS-NZOI">Trans-Nzoia</option>
+                  <option value="TURKANA">Turkana</option>
+                  <option value="UASIN-GISHU">Uasin-Gishu</option>
+                  <option value="VIHIGA">Vihiga</option>
+                  <option value="WAJIR">Wajir</option>
+                  <option value="WEST-POKOT">West-Pokot</option>
+                </select>
+              </div>
+
+              <!-- Sub County -->
+              <div class="input-field">
+                <label for="">Sub County </label>
+                <input
+                  type="text"
+                  placeholder="Enter your Sub county"
+                  required
+                />
+              </div>
+
+              <!-- Ethnicity -->
+              <div class="input-field">
+                <label>Ethnicity</label>
+                <select name="ethnicity" class="form-control" id="ethnicity">
+                  <option value="">--Select--</option>
+                  <option value="ETHNICITY">Ameru</option>
+                  <option value="ETHNICITY">Borana</option>
+                  <option value="ETHNICITY">Bulji</option>
+                  <option value="ETHNICITY">Dasenach</option>
+                  <option value="ETHNICITY">Embu</option>
+                  <option value="ETHNICITY">Gabra</option>
+                  <option value="ETHNICITY">Galjeel</option>
+                  <option value="ETHNICITY">Galla</option>
+                  <option value="ETHNICITY">Gosha</option>
+                  <option value="ETHNICITY">Ilchamus</option>
+                  <option value="ETHNICITY">Isaak</option>
+                  <option value="ETHNICITY">Kalenjin</option>
+                  <option value="ETHNICITY">Kamba</option>
+                  <option value="ETHNICITY">Kenyan American</option>
+                  <option value="ETHNICITY">Kenyan Asian</option>
+                  <option value="ETHNICITY">Kenyan European</option>
+                  <option value="ETHNICITY">Kikuyu</option>
+                  <option value="ETHNICITY">Kisii</option>
+                  <option value="ETHNICITY">Konso</option>
+                  <option value="ETHNICITY">Kuria</option>
+                  <option value="ETHNICITY">Leysan</option>
+                  <option value="ETHNICITY">Luhya</option>
+                  <option value="ETHNICITY">Luo</option>
+                  <option value="ETHNICITY">Maasai</option>
+                  <option value="ETHNICITY">Mbeere</option>
+                  <option value="ETHNICITY">Mijikenda</option>
+                  <option value="ETHNICITY">Njemps</option>
+                  <option value="ETHNICITY">Nubi</option>
+                  <option value="ETHNICITY">Orma</option>
+                  <option value="ETHNICITY">Rendile</option>
+                  <option value="ETHNICITY">Sakuye</option>
+                  <option value="ETHNICITY">Samburu</option>
+                  <option value="ETHNICITY">Somali</option>
+                  <option value="ETHNICITY">Suba</option>
+                  <option value="ETHNICITY">Swahili</option>
+                  <option value="ETHNICITY">Taita</option>
+                  <option value="ETHNICITY">Taveta</option>
+                  <option value="ETHNICITY">Teso</option>
+                  <option value="ETHNICITY">Tharaka</option>
+                  <option value="ETHNICITY">The Makonde</option>
+                  <option value="ETHNICITY">Turkana</option>
+                  <option value="ETHNICITY">Waat</option>
+                  <option value="ETHNICITY">Walwana</option>
+                </select>
+              </div>
+
+              <!--Religion-->
+
+              <div class="input-field">
+                <label class="control-label">Religion</label>
+                <select name="religion" class="form-control" id="religion">
+                  <option value="">--Select--</option>
+                  <option value="CHRISTIAN">Christian</option>
+                  <option value="HINDU">HINDU</option>
+                  <option value="MUSLIM">MUSLIM</option>
+                  <option value="OTHER">OTHER</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="course-form">
+              <div class="course-details">
+                <span class="title">Course Details</span>
+              </div>
+              <div class="fields">
+
+<!-- Departments -->
+<div class="input-field">
+  <label class="control-label">Department</label>
+  <select name="department">
+      <option value="" selected>--Select Department--</option>
+      <option value="hospitality_tourism_management">HOSPITALITY & TOURISM MANAGEMENT</option>
+      <option value="fashion_design_cosmetology">FASHION DESIGN & COSMETOLOGY</option>
+      <option value="business_studies_entrepreneurship">BUSINESS STUDIES & ENTREPRENEURSHIP</option>
+      <option value="vipawa_academy">VIPAWA ACADEMY</option>
+      <option value="liberal_studies">LIBERAL STUDIES</option>
+      <option value="applied_sciences">APPLIED SCIENCES</option>
+      <option value="mechanical_automotive_engineering">MECHANICAL & AUTOMOTIVE ENGINEERING</option>
+      <option value="building_civil_engineering">BUILDING & CIVIL ENGINEERING</option>
+      <option value="electrical_electronic_engineering">ELECTRICAL & ELECTRONIC ENGINEERING</option>
+      <option value="computing_informatics">COMPUTING & INFORMATICS</option>
+      <option value="health_sciences">HEALTH SCIENCES</option>
+  </select>
+</div>
+
+                <!-- Course level -->
+                <div class="input-field">
+                  <label class="control-label">Course level</label>
+                  <select name="course_level">
+                    <option value="" selected>--Select--</option>
+                    <option value="Diploma" selected>Level 6 (Diploma)</option>
+                    <option value="Certificate">Level 5 (Certificate)</option>
+                    <option value="Artisan">Level 4 & 3 (Artisan)</option>
+                    <option value="Short Course">Short Course</option>
+                  </select>
+                </div>
+
+                <!-- Course name -->
+                <div class="input-field">
+                  <label class="control-label">Course name</label>
+                  <select name="course_level" required>
+                    <option value="" selected>--Select--</option>
+                    <option value="Diploma" selected>
+                      ICT Technician Level 6
+                    </option>
+                    <option value="Certificate">ICT Technician Level 5</option>
+                    <option value="Artisan">ICT Technician Level 4</option>
+                    <option value="Short Course">Digital Literacy</option>
+                  </select>
+                </div>
+
+                <!-- intake  -->
+
+                <div class="input-field">
+                  <label class="control-label">Intake</label>
+                  <select name="intake">
+                    <option value="" selected>--Select--</option>
+                    <option value="January">January 2024 Intake</option>
+                    <option value="May Intake" selected>May 2024 Intake</option>
+                    <option value="September Intake">
+                      September 2024 Intake
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- first button  -->
+            <div class="buttons">
+              <button class="nextBtn">
+                <span class="btnText" onclick="showSection(2, true)"> Next &#8594;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- second form  -->
+        <div class="form second"  id="section2" style="display:none;">
+          <div class="education-title">
+            <span class="title"> Step 2/3 - Education Details</span>
+          </div>
+          
+          <div class="details education">
+            <div class="details-highschool">
+              <span>High school qualification</span>
+              <div class="fields">
+                <!-- Course level -->
+                <div class="input-field">
+                  <label for="">High school Name</label>
+                  <input
+                    type="text"
+                    placeholder="Please input your highschool name"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label for="">From Year</label>
+                  <input type="date" placeholder="Enter start year" required />
+                </div>
+    
+                <div class="input-field">
+                  <label for="">To Year</label>
+                  <input
+                    type="date"
+                    placeholder="Enter the year of completion"
+                    required
+                  />
+                </div>
+    
+               
+                <div class="input-field">
+                  <label for="">Index Number</label>
+                  <input
+                    type="number"
+                    placeholder="Enter your index number"
+                    required
+                  />
+                </div>
+    
+                <div class="input-field">
+                  <label>Mean Grade</label>
+                  <select
+                    name="mean_grade"
+                    class="form-control"
+                    id="mean_grade"
+                    required
+                  >
+                    <option value="">--Select--</option>
+                    <option value="A">A</option>
+                    <option value="A-">A-</option>
+                    <option value="B">B</option>
+                    <option value="B-">B-</option>
+                    <option value="B+">B+</option>
+                    <option value="C">C</option>
+                    <option value="C-">C-</option>
+                    <option value="C+">C+</option>
+                    <option value="D">D</option>
+                    <option value="D-">D-</option>
+                    <option value="D+">D+</option>
+                    <option value="E">E</option>
+                  </select>
+                </div>
+    
+                <!-- Certificate -->
+                <div class="input-field">
+                  <label class="control-label">Certificate(PDF file)</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="certificate"
+                    id="highschoolcert"
+                    accept="image/*, application/pdf"
+                    onchange="onUploadHighSchoolCert()"
+                    required
+                  />
+                </div>
+            </div>
+            <div class="details-primaryschool">
+              <div class="qualification">
+                <span>Primary school qualification</span>
+              </div>
+              <div class="fields">
+                <!-- Course level -->
+                <div class="input-field">
+                  <label for="">Primary school Name</label>
+                  <input
+                    type="text"
+                    placeholder="Please input your Primary school name"
+                    required
+                  />
+                </div>
+                <div class="input-field">
+                  <label for="">From Year</label>
+                  <input type="date" placeholder="Enter start year" required />
+                </div>
+    
+                <div class="input-field">
+                  <label for="">To Year</label>
+                  <input
+                    type="date"
+                    placeholder="Enter the year of completion"
+                    required
+                  />
+                </div>
+    
+                
+                <div class="input-field">
+                  <label for="">Index Number</label>
+                  <input
+                    type="number"
+                    placeholder="Enter your index number"
+                    required
+                  />
+                </div>
+    
+                <div class="input-field">
+                  <label for="">Total Marks Score</label>
+                  <input
+                    type="number"
+                    placeholder="Enter the total marks score"
+                    required
+                  />
+                </div>
+    
+                <!-- Certificate -->
+                <div class="input-field">
+                  <label class="control-label">Certificate(PDF file)</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="certificate"
+                    id="highschoolcert"
+                    accept="image/*, application/pdf"
+                    onchange="onUploadHighSchoolCert()"
+                    required
+                  />
+                </div>
+
+                
+              </div>
+            </div>
+            <div class="buttons">
+              <button class="backBtn">
+                <span class="btnText" onclick="showSection(1)"> &#8592;Back</span>
+              </button>
+  
+              <button class="nextBtn">
+                <span class="btnText" onclick="showSection(3, true)"> Next &#8594;</span>
+              </button>
+            </div>
+          </div>
+          
+         
+          
+        </div>
+
+          
+         
+        </div>
+
+        <!-- -------------third form -----------------  -->
+        <div class="form third"  id="section3" style="display:none;">
+          <div class="contacts-title">
+            <span class="title"> Step 3/3 - Contact Details</span>
+          </div>
+
+          <!-- forms start -->
+          <div class="details contacts">
+            <span>Your Home address</span>
+         
+          <div class="fields">
+              <div class="input-field">
+                <label for="">Adress box(P.O BOX)</label>
+                <input
+                  type="text"
+                  placeholder="Please input your postal address"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label for="">Address code</label>
+                <input type="number" placeholder="eg 80100" required />
+              </div>
+  
+              <div class="input-field">
+                <label for="">address town</label>
+                <input type="text" placeholder="eg Mombasa" required />
+              </div>
+          </div>
+
+          <!-- end of address details -->
+            <div class="details parents">
+              <div class="parentsdetails">
+                <span>Parents details</span>    
+              <!-- Mother  -->
+              <div class="fields">
+                <div class="input-field">
+                  <label for="">Mother's Name</label>
+                  <input
+                    type="text"
+                    placeholder="Please input your Mother's Name"
+                  />
+                </div>
+                <div class="input-field">
+                  <label for="">Occupation</label>
+                  <input type="text" placeholder="eg teacher" required />
+                </div>
+    
+                <div class="input-field">
+                  <label for="">Mobile Number</label>
+                  <input type="number" placeholder="eg 071234589" required />
+                </div>
+              </div>
+    
+              <!-- Father  -->
+              <div class="fields">
+                <div class="input-field">
+                  <label for="">Father's Name</label>
+                  <input
+                    type="text"
+                    placeholder="Please input your Father's Name"
+                  />
+                </div>
+                <div class="input-field">
+                  <label for="">Occupation</label>
+                  <input type="text" placeholder="eg teacher" required />
+                </div>
+    
+                <div class="input-field">
+                  <label for="">Mobile Number</label>
+                  <input type="number" placeholder="eg 071234589" required />
+                </div>
+              </div>
+    
+              <!-- Next of Kin/Guardian Name  -->
+              <div class="fields">
+                <div class="input-field">
+                  <label for="">Next of Kin/Guardian Name</label>
+                  <input type="text" placeholder="Please input Name" />
+                </div>
+                <div class="input-field">
+                  <label for="">Occupation</label>
+                  <input type="text" placeholder="eg teacher" required />
+                </div>
+    
+                <div class="input-field">
+                  <label for="">Mobile Number</label>
+                  <input type="number" placeholder="eg 071234589" required />
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+<!-- buttons here  -->
+<div class="buttons">
+  <button class="backBtn">
+    <span class="btnText" onclick="showSection(2)"> &#8592;Back</span>
+  </button>
+
+  <button type="submit" class="nextBtn">
+    
+    <span class="btnText submit"> Submit</span>
+  </button>
+</div>
+
+          </div>
+          <!-- forms end -->
+
+          <!-- forms start -->
+         
+            
+            
+          </div>
+          <!-- forms end -->
+
+       
+        </div>
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
