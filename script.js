@@ -97,6 +97,7 @@ function toggleIDInput() {
   }
 }
 
+///// this can also be performed easily when the form is pushed to a database then you can just extract data as pdf after submit
 async function generatePDF() {
   const { jsPDF } = window.jspdf;
   const form = document.getElementById("identityForm");
@@ -134,26 +135,3 @@ document
       // Code to handle changes and validate in real-time, if needed
     });
   });
-
-/*
-
-
-const form = document.querySelector("form"),
-  nextBtn = form.querySelector(".nextBtn"),
-  backBtn = form.querySelector("backBtn"),
-  allInPut = form.querySelector(".first input");
-
-nextBtn.addEventListener("click", () => {
-  allInPut.forEach((input) => {
-    if (input.value != "") {
-      form.classList.add("secActive");
-    } else {
-      form.classList.remove("secActive");
-    }
-  });
-});
-
-backBtn.addEventListener("click", () => form.classList.remove("secActive"));
-
-
-*/
