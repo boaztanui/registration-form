@@ -152,6 +152,10 @@ form .fields .input-field {
   margin-top: 2rem;
 }
 
+#photo {
+  height: 4.5rem;
+}
+
 .input-field label {
   font-size: 1.6rem;
   font-weight: 400;
