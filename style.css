@@ -59,10 +59,10 @@ body {
   /* background: #ad28b9; */
 }
 
-.first,
+/* .first,
 .second {
   min-height: 70vh;
-}
+} */
 
 .container {
   position: relative;
@@ -108,42 +108,6 @@ body {
   margin-top: 3rem;
 }
 
-/* 
-.container form .details {
-  position: absolute;
-  background-color: #ebfbee;
-}
-
-.container form .personal-details {
-  margin-top: 3.2rem;
-} */
-/* 
-.container form .details.ID {
-  margin-top: 1rem;
-} */
-
-/* .container form .form {
-  position: absolute;
-  background-color: #fff;
-} */
-/*
-.container form .form .second {
-  opacity: 0;
-  pointer-events: none;
-}
-
-form.secActive .form .second {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-form.secActive .form.first {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-*/
-
 .container form title {
   display: block;
   margin-bottom: 0.8rem;
@@ -158,6 +122,11 @@ form.secActive .form.first {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.required-label::after {
+  content: " *";
+  color: red;
 }
 
 form .fields .input-field {
@@ -179,6 +148,10 @@ form .fields .input-field {
   padding: 0.5rem 0.8rem;
 }
 
+.details {
+  margin-top: 2rem;
+}
+
 .input-field label {
   font-size: 1.6rem;
   font-weight: 400;
@@ -196,6 +169,22 @@ select {
   height: 4.8rem;
   margin: 0.8rem 0;
   color: #333;
+}
+input[type="file" i] {
+  align-items: baseline;
+  text-overflow: ellipsis;
+  text-align: start !important;
+  color: inherit;
+  overflow: hidden !important;
+  /* padding: initial; */
+  font-size: 400;
+  font-family: inherit;
+  padding: 1.2rem;
+  cursor: pointer;
+  white-space: pre;
+}
+input#file-upload-button {
+  height: 100%;
 }
 
 .passport input {
@@ -274,7 +263,7 @@ select {
   justify-content: center;
   /* height: 4.5rem; */
   /* max-width: 8rem; */
-  padding: 15px 30px;
+  padding: 1.7rem 5rem;
   /* width: 100%; */
   border: none;
   color: #fff;
@@ -287,17 +276,75 @@ select {
   transition: all 0.3s linear;
 }
 
-form button:hover {
-  background-color: #bd53c7;
+.parentsdetails {
+  margin-top: 2rem;
 }
 
-form .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+form button:hover {
+  background-color: #bd53c7;
 }
 
 form .buttons button,
 .btnText {
   margin-right: 1.4rem;
+}
+
+/* Media Queries */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+    margin: 0 1rem; /* Reduced side margins */
+  }
+
+  .container form .fields .input-field {
+    width: calc(100% - 1rem); /* Full width minus margin */
+  }
+
+  .container header h1 {
+    font-size: 2.4rem; /* Smaller font size */
+  }
+
+  .title,
+  .input-field input,
+  .input-field select {
+    font-size: 1.4rem; /* Smaller input and select font size */
+  }
+
+  .input-field select {
+    padding: 0.8rem 1.5rem; /* Increased padding for easier interaction */
+    height: auto; /* Adjust height to fit content */
+  }
+}
+
+/* Phones and below */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%; /* Smaller base font size */
+  }
+
+  .container {
+    padding: 1rem;
+    margin: 0 0.5rem; /* Even smaller side margins */
+  }
+
+  .container header h1 {
+    font-size: 2rem; /* Even smaller font size */
+  }
+
+  .container form .fields .input-field {
+    width: 100%; /* Inputs take full width */
+  }
+
+  .passport-photo .input-field,
+  .passport-photo-label {
+    width: 100%; /* Adjust passport photo fields to take full width */
+    min-width: auto; /* Resetting min-width */
+  }
+
+  .input-field select {
+    padding: 0.6rem 1.5rem; /* Slightly reduced padding from tablet size */
+    font-size: 1.4rem; /* Consistent font size with inputs */
+  }
 }

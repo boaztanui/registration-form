@@ -27,7 +27,7 @@
               <div class="passport-photo-container">
                 <div class="passport-photo">
                   <div class="input-field passport">
-                    <label class="passport-photo-label"
+                    <label class="passport-photo-label required-label"
                       >Please attach a Passport Size Photo(image format should
                       be in *.jpg,*. jpeg,*.png)Max size=2MB Must have a clear
                       background.
@@ -67,13 +67,13 @@
               <!-- Full Name -->
               <div class="input-field">
                 <!-- This can be changed to make the user input surname, middle name and Firstname separately -->
-                <label for="">Full Name</label>
+                <label for="" class="required-label">Full Name</label>
                 <input type="text" placeholder="Enter your name" required />
               </div>
 
               <!-- Date of Birth -->
               <div class="input-field">
-                <label for="">Date of Birth</label>
+                <label for=""  class="required-label">Date of Birth</label>
                 <input
                   type="date"
                   placeholder="Enter your Date of Birth"
@@ -83,8 +83,8 @@
 
               <!--gender-->
               <div class="input-field">
-                <label>Gender</label>
-                <select name="gender" class="form-control" id="gender">
+                <label class="required-label">Gender</label>
+                <select required name="gender" class="form-control" id="gender">
                   <option value="">--Select--</option>
                   <option value="1">Male</option>
                   <option value="2">Female</option>
@@ -93,13 +93,13 @@
               </div>
               <!-- Email -->
               <div class="input-field">
-                <label for="emailInput">Email</label>
+                <label class="required-label" for="emailInput">Email</label>
                 <input type="email" id="emailInput" name="email" placeholder="Enter your Email" required />
               </div>
 
               <!--Nationality-->
               <div class="input-field">
-                <label class="control-label">Nationality</label>
+                <label class="control-label required-label">Nationality</label>
                 <select
                   name="nationality"
                   class="form-control selectpickerxx"
@@ -334,15 +334,15 @@
 
   <!-- Input and upload for National ID -->
   
-    <div id="nationalIDSection" style="display: none;">
-<div class="input-field">
-  <label for="nationalIDNumber">National ID Number:</label>
-  <input type="number" id="nationalIDNumber" placeholder="eg. 23456745" name="nationalIDNumber">
-</div>
-<div class="input-field">
-  <label for="nationalIDFile">Upload Scanned National ID (PDF):</label>
-  <input type="file" id="nationalIDFile" name="nationalIDFile" accept="application/pdf">
-</div> 
+<div id="nationalIDSection" style="display: none;">
+    <div class="input-field">
+      <label for="nationalIDNumber">National ID Number:</label>
+      <input type="number" id="nationalIDNumber" placeholder="eg. 23456745" name="nationalIDNumber">
+    </div>
+    <div class="input-field">
+      <label for="nationalIDFile">Upload Scanned National ID (PDF):</label>
+      <input type="file" id="nationalIDFile" name="nationalIDFile" accept="application/pdf">
+    </div> 
   </div>
  
 
@@ -361,7 +361,7 @@
             
              <!-- Marital status -->
 <div class="input-field">
-  <label for="maritalStatus">Marital status</label>
+  <label for="maritalStatus" class="required-label">Marital status</label>
   <select id="maritalStatus" name="maritalStatus" required>
     <option value="">Select your marital status</option>
     <option value="single">Single</option>
@@ -372,7 +372,7 @@
 </div>
               <!-- Place of Birth -->
               <div class="input-field">
-                <label for="">Place of Birth</label>
+                <label for="" class="required-label">Place of Birth</label>
                 <input
                   type="text"
                   placeholder="Enter your place of Birth"
@@ -383,8 +383,8 @@
               <!--county-->
 
               <div class="input-field">
-                <label class="control-label">County</label>
-                <select name="county" class="form-control">
+                <label class="required-label">County</label>
+                <select required name="county" class="form-control">
                   
                   <option value="">Select your County</option>
                   <option value="BARINGO">Baringo</option>
@@ -522,8 +522,8 @@
 
 <!-- Departments -->
 <div class="input-field">
-  <label class="control-label">Department</label>
-  <select name="department">
+  <label class="control-label required-label">Department</label>
+  <select required ="department">
       <option value="" selected>--Select Department--</option>
       <option value="hospitality_tourism_management">HOSPITALITY & TOURISM MANAGEMENT</option>
       <option value="fashion_design_cosmetology">FASHION DESIGN & COSMETOLOGY</option>
@@ -541,7 +541,7 @@
 
                 <!-- Course level -->
                 <div class="input-field">
-                  <label class="control-label">Course level</label>
+                  <label class="control-label required-label">Course level</label>
                   <select name="course_level">
                     <option value="" selected>--Select--</option>
                     <option value="Diploma" selected>Level 6 (Diploma)</option>
@@ -553,7 +553,7 @@
 
                 <!-- Course name -->
                 <div class="input-field">
-                  <label class="control-label">Course name</label>
+                  <label class="control-label required-label">Course name</label>
                   <select name="course_level" required>
                     <option value="" selected>--Select--</option>
                     <option value="Diploma" selected>
@@ -568,7 +568,7 @@
                 <!-- intake  -->
 
                 <div class="input-field">
-                  <label class="control-label">Intake</label>
+                  <label class="control-label required-label" required>Intake</label>
                   <select name="intake">
                     <option value="" selected>--Select--</option>
                     <option value="January">January 2024 Intake</option>
@@ -582,15 +582,15 @@
             </div>
 
             <!-- first button  -->
-            <div class="buttons">
+            <!-- <div class="buttons">
               <button class="nextBtn">
                 <span class="btnText" onclick="showSection(2, true)"> Next &#8594;</span>
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- second form  -->
-        <div class="form second"  id="section2" style="display:none;">
+        <div class="form second"  id="section2" >
           <div class="education-title">
             <span class="title"> Step 2/3 - Education Details</span>
           </div>
@@ -734,7 +734,7 @@
                 
               </div>
             </div>
-            <div class="buttons">
+            <!-- <div class="buttons">
               <button class="backBtn">
                 <span class="btnText" onclick="showSection(1)"> &#8592;Back</span>
               </button>
@@ -742,7 +742,7 @@
               <button class="nextBtn">
                 <span class="btnText" onclick="showSection(3, true)"> Next &#8594;</span>
               </button>
-            </div>
+            </div> -->
           </div>
           
          
@@ -754,7 +754,7 @@
         </div>
 
         <!-- -------------third form -----------------  -->
-        <div class="form third"  id="section3" style="display:none;">
+        <div class="form third"  id="section3" ">
           <div class="contacts-title">
             <span class="title"> Step 3/3 - Contact Details</span>
           </div>
@@ -765,7 +765,7 @@
          
           <div class="fields">
               <div class="input-field">
-                <label for="">Adress box(P.O BOX)</label>
+                <label for="" class="required-label">Adress box(P.O BOX)</label>
                 <input
                   type="text"
                   placeholder="Please input your postal address"
@@ -773,14 +773,11 @@
                 />
               </div>
               <div class="input-field">
-                <label for="">Address code</label>
-                <input type="number" placeholder="eg 80100" required />
+                <label for="" class="required-label">Address code and address</label>
+                <input type="number" placeholder="eg 80100 Mombasa"  required/>
               </div>
   
-              <div class="input-field">
-                <label for="">address town</label>
-                <input type="text" placeholder="eg Mombasa" required />
-              </div>
+              
           </div>
 
           <!-- end of address details -->
@@ -796,14 +793,11 @@
                     placeholder="Please input your Mother's Name"
                   />
                 </div>
-                <div class="input-field">
-                  <label for="">Occupation</label>
-                  <input type="text" placeholder="eg teacher" required />
-                </div>
+              
     
                 <div class="input-field">
                   <label for="">Mobile Number</label>
-                  <input type="number" placeholder="eg 071234589" required />
+                  <input type="number" placeholder="eg 071234589"/>
                 </div>
               </div>
     
@@ -816,10 +810,7 @@
                     placeholder="Please input your Father's Name"
                   />
                 </div>
-                <div class="input-field">
-                  <label for="">Occupation</label>
-                  <input type="text" placeholder="eg teacher" required />
-                </div>
+               
     
                 <div class="input-field">
                   <label for="">Mobile Number</label>
@@ -830,16 +821,13 @@
               <!-- Next of Kin/Guardian Name  -->
               <div class="fields">
                 <div class="input-field">
-                  <label for="">Next of Kin/Guardian Name</label>
+                  <label for="" class="required-label">Next of Kin/Guardian Name</label>
                   <input type="text" placeholder="Please input Name" />
                 </div>
-                <div class="input-field">
-                  <label for="">Occupation</label>
-                  <input type="text" placeholder="eg teacher" required />
-                </div>
+                
     
                 <div class="input-field">
-                  <label for="">Mobile Number</label>
+                  <label for="" class="required-label">Mobile Number</label>
                   <input type="number" placeholder="eg 071234589" required />
                 </div>
             </div>
@@ -849,13 +837,13 @@
 
 <!-- buttons here  -->
 <div class="buttons">
-  <button class="backBtn">
+  <!-- <button class="backBtn">
     <span class="btnText" onclick="showSection(2)"> &#8592;Back</span>
-  </button>
+  </button> -->
 
-  <button type="submit" class="nextBtn">
+  <button type="submit">
     
-    <span class="btnText submit"> Submit</span>
+    <span class="submit"> Submit</span>
   </button>
 </div>
 
@@ -863,8 +851,7 @@
           <!-- forms end -->
 
           <!-- forms start -->
-         
-            
+        
             
           </div>
           <!-- forms end -->
