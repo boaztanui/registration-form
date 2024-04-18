@@ -122,6 +122,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .required-label::after {
@@ -146,6 +147,10 @@ form .fields .input-field {
   justify-content: center;
   height: 3.2rem;
   padding: 0.5rem 0.8rem;
+}
+
+.course-details-title {
+  font-weight: 500;
 }
 
 .details {
@@ -195,7 +200,7 @@ input#file-upload-button {
   min-width: 20rem;
 }
 
-.input-field input:is(:focus, :valid) {
+.input-field input:is(:focus) {
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.13);
   border: solid 1px #bd53c7;
 }
@@ -291,6 +296,20 @@ form button:hover {
 form .buttons button,
 .btnText {
   margin-right: 1.4rem;
+}
+
+.agreeTerms {
+  margin-top: 2rem;
+}
+
+.agreeTerms label a:link,
+.agreeTerms label a:visited {
+  color: #ad28b9;
+  text-decoration: none;
+}
+
+.agreeTerms input[type="checkbox"] {
+  background-color: red;
 }
 
 /* Media Queries */

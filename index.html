@@ -516,14 +516,15 @@
 
             <div class="course-form">
               <div class="course-details">
-                <span class="title">Course Details</span>
+                <span class="course-details-title">Course Details</span>
               </div>
+
               <div class="fields">
 
 <!-- Departments -->
 <div class="input-field">
   <label class="control-label required-label">Department</label>
-  <select required ="department">
+  <select required class="department">
       <option value="" selected>--Select Department--</option>
       <option value="hospitality_tourism_management">HOSPITALITY & TOURISM MANAGEMENT</option>
       <option value="fashion_design_cosmetology">FASHION DESIGN & COSMETOLOGY</option>
@@ -568,16 +569,26 @@
                 <!-- intake  -->
 
                 <div class="input-field">
-                  <label class="control-label required-label" required>Intake</label>
-                  <select name="intake">
-                    <option value="" selected>--Select--</option>
-                    <option value="January">January 2024 Intake</option>
-                    <option value="May Intake" selected>May 2024 Intake</option>
-                    <option value="September Intake">
-                      September 2024 Intake
-                    </option>
+                  <label for="intakeMonth" class="control-label required-label">Intake Month</label>
+                  <select id="intakeMonth" name="intakeMonth">
+                      <option value="">--Select Month--</option>
+                      <option value="January">January</option>
+                      <option value="May">May</option>
+                      <option value="September">September</option>
                   </select>
-                </div>
+              </div>
+              <div class="input-field">
+                  <label for="intakeYear" class="control-label required-label">Intake Year</label>
+                  <select id="intakeYear" name="intakeYear">
+                      <option value="">--Select Year--</option>
+                      <option value="">2024</option>
+                      <option value="">2025</option>
+                      <option value="">2026</option>
+                      <!-- Years will be populated by JavaScript -->
+                  </select>
+              </div>
+              
+              
               </div>
             </div>
 
@@ -597,7 +608,7 @@
           
           <div class="details education">
             <div class="details-highschool">
-              <span>High school qualification</span>
+              <span class="course-details-title">High school qualification</span>
               <div class="fields">
                 <!-- Course level -->
                 <div class="input-field">
@@ -605,13 +616,24 @@
                   <input
                     type="text"
                     placeholder="Please input your highschool name"
-                    required
+                   
+                  />
+                </div>
+
+                <div class="input-field">
+                  <label for="">Index Number</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your index number"
+                  
                   />
                 </div>
                 <div class="input-field">
                   <label for="">From Year</label>
-                  <input type="number" placeholder="eg 2010" required />
+                  <input type="text" placeholder="eg 2010"  />
                 </div>
+
+             
     
                 <div class="input-field">
                   <label for="">To Year</label>
@@ -623,14 +645,7 @@
                 </div>
     
                
-                <div class="input-field">
-                  <label for="">Index Number</label>
-                  <input
-                    type="number"
-                    placeholder="Enter your index number"
-                    required
-                  />
-                </div>
+               
     
                 <div class="input-field">
                   <label>Mean Grade</label>
@@ -672,15 +687,24 @@
             </div>
             <div class="details-primaryschool">
               <div class="qualification">
-                <span>Primary school qualification</span>
+                <span class="course-details-title">Primary school qualification</span>
               </div>
               <div class="fields">
                 <!-- Course level -->
                 <div class="input-field">
-                  <label for="">Primary school Name</label>
+                  <label for="" class="">Primary school Name</label>
                   <input
                     type="text"
                     placeholder="Please input your Primary school name"
+                    required
+                  />
+                </div>
+
+                <div class="input-field">
+                  <label for="">Index Number</label>
+                  <input
+                    type="number"
+                    placeholder="Enter your index number"
                     required
                   />
                 </div>
@@ -699,14 +723,7 @@
                 </div>
     
                 
-                <div class="input-field">
-                  <label for="">Index Number</label>
-                  <input
-                    type="number"
-                    placeholder="Enter your index number"
-                    required
-                  />
-                </div>
+               
     
                 <div class="input-field">
                   <label for="">Total Marks Score</label>
@@ -830,7 +847,13 @@
                   <label for="" class="required-label">Mobile Number</label>
                   <input type="number" placeholder="eg 071234589" required />
                 </div>
+
+                <div class="agreeTerms">
+                  <input type="checkbox" id="agreeTerms" name="agreeTerms"/>
+                  <label> By submitting this form you agree to the <a href="#" >Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+              </div>
             </div>
+
           </div>
           </div>
         </div>
