@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Toggle ID and Birth Certificate input fields
+
+  /*
   document
     .getElementById("hasNationalID")
     .addEventListener("change", function () {
@@ -44,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("birthCertificateSection").style.display =
         hasID === "no" ? "flex" : "none";
     });
+
+    */
 
   // Form submission validation
   form.addEventListener("submit", function (event) {
@@ -60,3 +64,52 @@ document.addEventListener("DOMContentLoaded", function () {
     // Further processing or PDF generation goes here
   });
 });
+// Function to toggle the visibility of National ID and Birth Certificate input fields
+function toggleIDInput() {
+  var hasNationalID = document.getElementById("hasNationalID").value;
+
+  // Access the National ID input fields
+  var nationalIDNumberDiv =
+    document.getElementById("nationalIDNumber").parentNode;
+  var nationalIDFileDiv = document.getElementById("nationalIDFile").parentNode;
+
+  // Access the Birth Certificate input fields
+  var birthCertificateNumberDiv = document.getElementById(
+    "birthCertificateNumber"
+  ).parentNode;
+  var birthCertificateFileDiv = document.getElementById(
+    "birthCertificateFile"
+  ).parentNode;
+  var birthCertificateFileLabel = document.querySelector(
+    'label[for="birthCertificateFile"]'
+  );
+
+  if (hasNationalID === "no") {
+    // Hide National ID fields
+    nationalIDNumberDiv.style.display = "none";
+    nationalIDFileDiv.style.display = "none";
+
+    // Show Birth Certificate fields
+    birthCertificateNumberDiv.style.display = "flex"; // Changed to 'flex' as it is a flex item
+    birthCertificateFileDiv.style.display = "flex"; // Changed to 'flex' as it is a flex item
+    birthCertificateFileLabel.style.display = "flex"; // Show label for birth certificate file
+  } else if (hasNationalID === "yes") {
+    // Show National ID fields
+    nationalIDNumberDiv.style.display = "flex"; // Changed to 'flex' as it is a flex item
+    nationalIDFileDiv.style.display = "flex"; // Changed to 'flex' as it is a flex item
+
+    // Hide Birth Certificate fields
+    birthCertificateNumberDiv.style.display = "none";
+    birthCertificateFileDiv.style.display = "none";
+    birthCertificateFileLabel.style.display = "none"; // Hide label for birth certificate file
+  } else {
+    // Show National ID fields by default when no option is selected
+    nationalIDNumberDiv.style.display = "flex"; // Changed to 'flex' as it is a flex item
+    nationalIDFileDiv.style.display = "flex"; // Changed to 'flex' as it is a flex item
+
+    // Hide Birth Certificate fields
+    birthCertificateNumberDiv.style.display = "none";
+    birthCertificateFileDiv.style.display = "none";
+    birthCertificateFileLabel.style.display = "none"; // Hide label for birth certificate file
+  }
+}
