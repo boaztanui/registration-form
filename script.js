@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("change", function () {
       var hasID = this.value;
       document.getElementById("nationalIDSection").style.display =
-        hasID === "yes" ? "block" : "none";
+        hasID === "yes" ? "flex" : "none";
       document.getElementById("birthCertificateSection").style.display =
-        hasID === "no" ? "block" : "none";
+        hasID === "no" ? "flex" : "none";
     });
 
   // Form submission validation
