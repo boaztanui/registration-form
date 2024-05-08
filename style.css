@@ -72,6 +72,7 @@ body {
   background-color: #fff;
   font-size: 1.8rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: solid 0.8rem #ad28b9;
 }
 
 .container header h1 {
@@ -162,6 +163,7 @@ form .fields .input-field {
   justify-content: center;
   height: 3.2rem;
   padding: 0.5rem 0.8rem;
+  border-radius: 5px;
 }
 
 .course-details-title {
@@ -283,6 +285,11 @@ input#file-upload-button {
 
 .parentsdetails {
   margin-top: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
 form button:hover {
